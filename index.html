@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>موقعي الشخصي - يونس</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<style>
+.cv-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white !important;
+  text-decoration: none !important;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.cv-button:hover {
+  background-color: #0056b3;
+}
+</style>
+
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="#" class="logo">يونس</a>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <ul class="nav-links">
+      <li><a href="#about">من أنا</a></li>
+      <li><a href="#skills">مهاراتي</a></li>
+      <li><a href="#projects">أعمالي</a></li>
+      <li><a href="#contact"> اتصل بي</a></li>
+    </ul>
+  </div>
+</nav>
+<header class="hero">
+  <div class="hero-content">
+    <h1>👋 مرحبًا، أنا يونس</h1>
+    <p>مطور ويب أصمم وأبرمج مواقع حديثة</p>
+  </div>
+</header>
+
+<section id="about" class="reveal">
+  <h2> من أنا</h2>
+  <div class="about-content">
+    <p>
+      شاب جزائري شغوف بتطوير الويب. أملك خبرة في تصميم وتكويد واجهات المواقع باستخدام
+      <strong>HTML</strong>، <strong>CSS</strong>، <strong>JavaScript</strong> و <strong>PHP</strong>.
+    </p>
+<a href="files/Younes_Merzoughi_CV.pdf" download class="cv-button">
+📄 تحميل السيرة الذاتية
+</a>
+  </div>
+</section>
+<section id="skills" class="reveal">
+  <h2>💡 مهاراتي</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+      <h3>HTML</h3>
+    </div>
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+      <h3>CSS</h3>
+    </div>
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+      <h3>JavaScript</h3>
+    </div>
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+      <h3>PHP</h3>
+    </div>
+    <div class="skill-card">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+  <h3>MySQL</h3>
+</div>
+
+<div class="skill-card">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+  <h3>Git</h3>
+</div>
+
+<div class="skill-card">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+  <h3>React</h3>
+</div>
+
+<div class="skill-card">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" alt="Laravel">
+  <h3>Laravel</h3>
+</div>
+
+  </div>
+</section>
+
+  <section id="projects" class="reveal">
+    <h2>أعمالي</h2>
+    <p></p>
+  </section>
+
+<section id="contact" class="reveal">
+  <h2>اتصل بي</h2>
+  <form action="contact.php" method="POST" class="contact-form">
+    <input type="text" name="name" placeholder="الاسم الكامل" required>
+    <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+    <textarea name="message" placeholder="رسالتك" required></textarea>
+    <button type="submit">إرسال</button>
+  </form>
+</section>
+
+
+  <footer>
+    <p>© 2025 يونس مرزوقي. كل الحقوق محفوظة.</p>
+  </footer>
+  <script>
+// تأثير الظهور عند التمرير
+function revealOnScroll() {
+  const reveals = document.querySelectorAll('.reveal');
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const elementTop = reveals[i].getBoundingClientRect().top;
+    if (elementTop < windowHeight - 100) {
+      reveals[i].classList.add("active");
+    }
+  }
+}
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+
+// تلوين الرابط النشط
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links li a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 80;
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
