@@ -38,8 +38,7 @@ It includes a working contact form powered by PHP and a responsive layout suitab
 - CSS  
 - JavaScript  
 - PHP
-- رVeu j
-
+- vue js
 ## 👨‍💻 Developer
 **Youness Merzoughi**  
 📧 younessmerzoughi@example.com  
